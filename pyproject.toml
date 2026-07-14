@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ascii-telegram"
+version = "0.1.0"
+description = "Telegram bot for converting images to ASCII art."
+requires-python = ">=3.12"
+dependencies = [
+    "aiogram",
+    "ascii-art-converter @ git+https://github.com/our0boros/ascii-art-converter.git",
+    "pillow",
+    "sqlalchemy",
+    "aiosqlite",
+    "pydantic-settings",
+    "python-dotenv",
+]
+
+[tool.setuptools]
+py-modules = ["config", "main"]
+packages = [
+    "app",
+    "database",
+    "handlers",
+    "keyboards",
+    "services",
+    "states",
+    "utils",
+]
